@@ -1,0 +1,13 @@
+﻿=== IDENTITY RESOLUTION FOR SAMPLE CASES ===
+python : Traceback (most recent call last):
+At C:\Users\ronty\AppData\Local\Temp\ps-script-07dab76e-92e7-4320-b8b9-0333c62e7c73.ps1:101 char:108
++ ... ank-orchestrate-october26-main"; python _analyze_deep.py 2>&1 | Out-F ...
++                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\ronty\Downloads\hackerrank-orchestrate-october26-main\hackerrank-orchestrate-october26-main\_analyze_d
+eep.py", line 32, in <module>
+    print(f"{cid}: email={email} user={uid} name={user['full_name'] if user else None} audit_hits={len(hist)}")
+                                                  ~~~~^^^^^^^^^^^^^
+KeyError: 'full_name'

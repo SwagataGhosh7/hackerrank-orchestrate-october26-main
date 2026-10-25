@@ -1,0 +1,481 @@
+﻿=== CASE SUMMARIES ===
+case_01: COMPLETE n=1 phases={'VERIFICATION': 1}
+case_02: COMPLETE n=1 phases={'VERIFICATION': 1}
+case_03: COMPLETE n=3 phases={'VERIFICATION': 3}
+case_04: COMPLETE n=2 phases={'VERIFICATION': 2}
+case_05: INCOMPLETE n=3 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 1}
+case_06: INCOMPLETE n=4 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 2}
+case_07: INCOMPLETE n=4 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 2}
+case_08: INCOMPLETE n=4 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 2}
+case_09: INCOMPLETE n=5 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 3}
+case_10: INCOMPLETE n=4 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 2}
+case_11: INCOMPLETE n=14 phases={'FINDING': 4, 'REMEDIATION': 4, 'VERIFICATION': 6}
+case_12: INCOMPLETE n=5 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 3}
+case_13: INCOMPLETE n=8 phases={'FINDING': 2, 'REMEDIATION': 2, 'VERIFICATION': 4}
+case_14: INCOMPLETE n=5 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 3}
+case_15: INCOMPLETE n=5 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 3}
+case_16: INCOMPLETE n=7 phases={'FINDING': 2, 'REMEDIATION': 2, 'VERIFICATION': 3}
+case_17: INCOMPLETE n=5 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 3}
+case_18: INCOMPLETE n=14 phases={'FINDING': 4, 'REMEDIATION': 4, 'VERIFICATION': 6}
+case_19: INCOMPLETE n=8 phases={'FINDING': 2, 'REMEDIATION': 2, 'VERIFICATION': 4}
+case_20: INCOMPLETE n=8 phases={'FINDING': 2, 'REMEDIATION': 2, 'VERIFICATION': 4}
+case_21: COMPLETE n=3 phases={'VERIFICATION': 3}
+case_22: INCOMPLETE n=8 phases={'FINDING': 2, 'REMEDIATION': 2, 'VERIFICATION': 4}
+case_23: INCOMPLETE n=8 phases={'FINDING': 2, 'REMEDIATION': 2, 'VERIFICATION': 4}
+case_24: INCOMPLETE n=7 phases={'FINDING': 2, 'REMEDIATION': 2, 'VERIFICATION': 3}
+case_25: COMPLETE n=3 phases={'VERIFICATION': 3}
+case_26: COMPLETE n=6 phases={'VERIFICATION': 6}
+case_27: COMPLETE n=6 phases={'VERIFICATION': 6}
+case_28: COMPLETE n=6 phases={'VERIFICATION': 6}
+case_29: INCOMPLETE n=14 phases={'FINDING': 4, 'REMEDIATION': 4, 'VERIFICATION': 6}
+case_30: INCOMPLETE n=14 phases={'FINDING': 4, 'REMEDIATION': 4, 'VERIFICATION': 6}
+case_31: COMPLETE n=3 phases={'VERIFICATION': 3}
+case_32: INCOMPLETE n=5 phases={'FINDING': 1, 'REMEDIATION': 1, 'VERIFICATION': 3}
+
+=== DETAILED CASES ===
+
+----- case_01 COMPLETE -----
+{"evidence_id": "evidence_54", "operation": "VERIFY_RECORD_ABSENT", "phase": "VERIFICATION", "resource_id": "account_001", "state": "ABSENT", "step_no": 1, "system_id": "account_service"}
+
+----- case_05 INCOMPLETE -----
+{"evidence_id": "evidence_54", "operation": "REPORT_REMAINING_RECORD", "phase": "FINDING", "resource_id": "account_005", "state": "PRESENT", "step_no": 1, "system_id": "account_service"}
+{"evidence_id": "", "operation": "DELETE_RECORD", "phase": "REMEDIATION", "resource_id": "account_005", "state": "ABSENT", "step_no": 2, "system_id": "account_service"}
+{"evidence_id": "", "operation": "VERIFY_RECORD_ABSENT", "phase": "VERIFICATION", "resource_id": "account_005", "state": "ABSENT", "step_no": 3, "system_id": "account_service"}
+
+----- case_11 INCOMPLETE -----
+{"step_no": 1, "phase": "FINDING", "system_id": "search_service", "resource_id": "search_052", "operation": "REPORT_REMAINING_RECORD", "state": "PRESENT", "evidence_id": "evidence_03"}
+{"step_no": 2, "phase": "FINDING", "system_id": "analytics_platform", "resource_id": "analytics_2034", "operation": "REPORT_EXPOSED_PII", "state": "PRESENT", "evidence_id": "evidence_03"}
+{"step_no": 3, "phase": "FINDING", "system_id": "support_platform", "resource_id": "support_864", "operation": "REPORT_EXPOSED_PII", "state": "PRESENT", "evidence_id": "evidence_03"}
+{"step_no": 4, "phase": "FINDING", "system_id": "integration_service", "resource_id": "data_flow_9522", "operation": "REPORT_ACTIVE_DATA_FLOW", "state": "ACTIVE", "evidence_id": "evidence_03"}
+{"step_no": 5, "phase": "REMEDIATION", "system_id": "integration_service", "resource_id": "data_flow_9522", "operation": "DISABLE_DATA_FLOW", "state": "DISABLED", "evidence_id": ""}
+{"step_no": 6, "phase": "REMEDIATION", "system_id": "search_service", "resource_id": "search_052", "operation": "DELETE_RECORD", "state": "ABSENT", "evidence_id": ""}
+{"step_no": 7, "phase": "REMEDIATION", "system_id": "support_platform", "resource_id": "support_864", "operation": "REDACT_RECORD", "state": "REDACTED", "evidence_id": ""}
+{"step_no": 8, "phase": "REMEDIATION", "system_id": "analytics_platform", "resource_id": "analytics_2034", "operation": "ANONYMIZE_RECORD", "state": "ANONYMIZED", "evidence_id": ""}
+{"step_no": 9, "phase": "VERIFICATION", "system_id": "account_service", "resource_id": "account_4248", "operation": "VERIFY_RECORD_ABSENT", "state": "ABSENT", "evidence_id": ""}
+{"step_no": 10, "phase": "VERIFICATION", "system_id": "search_service", "resource_id": "search_052", "operation": "VERIFY_RECORD_ABSENT", "state": "ABSENT", "evidence_id": ""}
+{"step_no": 11, "phase": "VERIFICATION", "system_id": "security_service", "resource_id": "audit_record_9394", "operation": "VERIFY_RECORD_PRESENT", "state": "PRESENT", "evidence_id": ""}
+{"step_no": 12, "phase": "VERIFICATION", "system_id": "support_platform", "resource_id": "support_864", "operation": "VERIFY_RECORD_REDACTED", "state": "REDACTED", "evidence_id": ""}
+{"step_no": 13, "phase": "VERIFICATION", "system_id": "analytics_platform", "resource_id": "analytics_2034", "operation": "VERIFY_RECORD_ANONYMIZED", "state": "ANONYMIZED", "evidence_id": ""}
+{"step_no": 14, "phase": "VERIFICATION", "system_id": "integration_service", "resource_id": "data_flow_9522", "operation": "VERIFY_DATA_FLOW_DISABLED", "state": "DISABLED", "evidence_id": ""}
+
+----- case_31 COMPLETE -----
+{"step_no": 1, "phase": "VERIFICATION", "system_id": "account_service", "resource_id": "account_4857", "operation": "VERIFY_RECORD_ABSENT", "state": "ABSENT", "evidence_id": "evidence_51"}
+{"step_no": 2, "phase": "VERIFICATION", "system_id": "security_service", "resource_id": "audit_record_6909", "operation": "VERIFY_RECORD_PRESENT", "state": "PRESENT", "evidence_id": "evidence_51"}
+{"step_no": 3, "phase": "VERIFICATION", "system_id": "identity_service", "resource_id": "tombstone_440", "operation": "VERIFY_RECORD_REDACTED", "state": "REDACTED", "evidence_id": "evidence_51"}
+
+----- case_32 INCOMPLETE -----
+{"step_no": 1, "phase": "FINDING", "system_id": "identity_service", "resource_id": "tombstone_9178", "operation": "REPORT_EXPOSED_PII", "state": "PRESENT", "evidence_id": "evidence_51"}
+{"step_no": 2, "phase": "REMEDIATION", "system_id": "identity_service", "resource_id": "tombstone_9178", "operation": "REDACT_RECORD", "state": "REDACTED", "evidence_id": ""}
+{"step_no": 3, "phase": "VERIFICATION", "system_id": "account_service", "resource_id": "account_8858", "operation": "VERIFY_RECORD_ABSENT", "state": "ABSENT", "evidence_id": ""}
+{"step_no": 4, "phase": "VERIFICATION", "system_id": "security_service", "resource_id": "audit_record_7068", "operation": "VERIFY_RECORD_PRESENT", "state": "PRESENT", "evidence_id": ""}
+{"step_no": 5, "phase": "VERIFICATION", "system_id": "identity_service", "resource_id": "tombstone_9178", "operation": "VERIFY_RECORD_REDACTED", "state": "REDACTED", "evidence_id": ""}
+
+=== ALL CASES FULL STEPS (compact) ===
+
+===== case_01 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_001                    ev='evidence_54'
+
+===== case_02 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_002                    ev='evidence_54'
+
+===== case_03 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_7566                   ev='evidence_94'
+   2 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_2016              ev='evidence_94'
+   3 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_9406                 ev='evidence_94'
+
+===== case_04 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_004                    ev='evidence_54'
+   2 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_901                  ev='evidence_56'
+
+===== case_05 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=account_service           res=account_005                    ev='evidence_54'
+   2 REMEDIATION  DELETE_RECORD                ABSENT       sys=account_service           res=account_005                    ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_005                    ev=''
+
+===== case_06 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_001                     ev='evidence_57'
+   2 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_001                     ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_006                    ev=''
+   4 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_001                     ev=''
+
+===== case_07 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=support_platform          res=support_001                    ev='evidence_58'
+   2 REMEDIATION  DELETE_RECORD                ABSENT       sys=support_platform          res=support_001                    ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_007                    ev=''
+   4 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=support_platform          res=support_001                    ev=''
+
+===== case_08 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=export_service            res=export_001                     ev='evidence_59'
+   2 REMEDIATION  DELETE_RECORD                ABSENT       sys=export_service            res=export_001                     ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_008                    ev=''
+   4 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=export_service            res=export_001                     ev=''
+
+===== case_09 INCOMPLETE =====
+   1 FINDING      REPORT_RESTORE_RISK          ACTIVE       sys=backup_service            res=backup_4978                    ev='evidence_93'
+   2 REMEDIATION  BLOCK_RESTORE                BLOCKED      sys=backup_service            res=backup_4978                    ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_3960                   ev=''
+   4 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_4902              ev=''
+   5 VERIFICATION VERIFY_RESTORE_BLOCKED       BLOCKED      sys=backup_service            res=backup_4978                    ev=''
+
+===== case_10 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=support_platform          res=support_002                    ev='evidence_61'
+   2 REMEDIATION  DELETE_RECORD                ABSENT       sys=support_platform          res=support_002                    ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_010                    ev=''
+   4 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=support_platform          res=support_002                    ev=''
+
+===== case_11 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_052                     ev='evidence_03'
+   2 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=analytics_platform        res=analytics_2034                 ev='evidence_03'
+   3 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=support_platform          res=support_864                    ev='evidence_03'
+   4 FINDING      REPORT_ACTIVE_DATA_FLOW      ACTIVE       sys=integration_service       res=data_flow_9522                 ev='evidence_03'
+   5 REMEDIATION  DISABLE_DATA_FLOW            DISABLED     sys=integration_service       res=data_flow_9522                 ev=''
+   6 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_052                     ev=''
+   7 REMEDIATION  REDACT_RECORD                REDACTED     sys=support_platform          res=support_864                    ev=''
+   8 REMEDIATION  ANONYMIZE_RECORD             ANONYMIZED   sys=analytics_platform        res=analytics_2034                 ev=''
+   9 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_4248                   ev=''
+  10 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_052                     ev=''
+  11 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_9394              ev=''
+  12 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=support_platform          res=support_864                    ev=''
+  13 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_2034                 ev=''
+  14 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_9522                 ev=''
+
+===== case_12 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=analytics_platform        res=analytics_9914                 ev='evidence_01'
+   2 REMEDIATION  DELETE_RECORD                ABSENT       sys=analytics_platform        res=analytics_9914                 ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_9797                   ev=''
+   4 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=analytics_platform        res=analytics_9914                 ev=''
+   5 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_2945              ev=''
+
+===== case_13 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_1308                    ev='evidence_03'
+   2 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=support_platform          res=support_4218                   ev='evidence_03'
+   3 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_1308                    ev=''
+   4 REMEDIATION  DELETE_RECORD                ABSENT       sys=support_platform          res=support_4218                   ev=''
+   5 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_9335                   ev=''
+   6 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_1308                    ev=''
+   7 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=support_platform          res=support_4218                   ev=''
+   8 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_4816              ev=''
+
+===== case_14 INCOMPLETE =====
+   1 FINDING      REPORT_RESTORE_RISK          ACTIVE       sys=backup_service            res=backup_3870                    ev='evidence_03'
+   2 REMEDIATION  BLOCK_RESTORE                BLOCKED      sys=backup_service            res=backup_3870                    ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_3677                   ev=''
+   4 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_987               ev=''
+   5 VERIFICATION VERIFY_RESTORE_BLOCKED       BLOCKED      sys=backup_service            res=backup_3870                    ev=''
+
+===== case_15 INCOMPLETE =====
+   1 FINDING      REPORT_ACTIVE_DATA_FLOW      ACTIVE       sys=integration_service       res=data_flow_9846                 ev='evidence_01'
+   2 REMEDIATION  DISABLE_DATA_FLOW            DISABLED     sys=integration_service       res=data_flow_9846                 ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_4745                   ev=''
+   4 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_1596              ev=''
+   5 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_9846                 ev=''
+
+===== case_16 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=account_service           res=account_994                    ev='evidence_05'
+   2 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_1007                    ev='evidence_05'
+   3 REMEDIATION  DELETE_RECORD                ABSENT       sys=account_service           res=account_994                    ev=''
+   4 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_1007                    ev=''
+   5 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_994                    ev=''
+   6 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_1007                    ev=''
+   7 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_9528              ev=''
+
+===== case_17 INCOMPLETE =====
+   1 FINDING      REPORT_RESTORE_RISK          ACTIVE       sys=backup_service            res=backup_3245                    ev='evidence_01'
+   2 REMEDIATION  BLOCK_RESTORE                BLOCKED      sys=backup_service            res=backup_3245                    ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_4092                   ev=''
+   4 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_1797              ev=''
+   5 VERIFICATION VERIFY_RESTORE_BLOCKED       BLOCKED      sys=backup_service            res=backup_3245                    ev=''
+
+===== case_18 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_4013                    ev='evidence_94'
+   2 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=analytics_platform        res=analytics_037                  ev='evidence_94'
+   3 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=support_platform          res=support_5569                   ev='evidence_94'
+   4 FINDING      REPORT_ACTIVE_DATA_FLOW      ACTIVE       sys=integration_service       res=data_flow_4890                 ev='evidence_94'
+   5 REMEDIATION  DISABLE_DATA_FLOW            DISABLED     sys=integration_service       res=data_flow_4890                 ev=''
+   6 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_4013                    ev=''
+   7 REMEDIATION  REDACT_RECORD                REDACTED     sys=support_platform          res=support_5569                   ev=''
+   8 REMEDIATION  ANONYMIZE_RECORD             ANONYMIZED   sys=analytics_platform        res=analytics_037                  ev=''
+   9 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_5521                   ev=''
+  10 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_4013                    ev=''
+  11 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_6645              ev=''
+  12 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=support_platform          res=support_5569                   ev=''
+  13 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_037                  ev=''
+  14 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_4890                 ev=''
+
+===== case_19 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_6083                    ev='evidence_01'
+   2 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=support_platform          res=support_9553                   ev='evidence_01'
+   3 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_6083                    ev=''
+   4 REMEDIATION  REDACT_RECORD                REDACTED     sys=support_platform          res=support_9553                   ev=''
+   5 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_9102                   ev=''
+   6 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_6083                    ev=''
+   7 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_6793              ev=''
+   8 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=support_platform          res=support_9553                   ev=''
+
+===== case_20 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_4262                    ev='evidence_94'
+   2 FINDING      REPORT_ACTIVE_DATA_FLOW      ACTIVE       sys=integration_service       res=data_flow_1770                 ev='evidence_94'
+   3 REMEDIATION  DISABLE_DATA_FLOW            DISABLED     sys=integration_service       res=data_flow_1770                 ev=''
+   4 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_4262                    ev=''
+   5 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_5037                   ev=''
+   6 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_4262                    ev=''
+   7 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_5569              ev=''
+   8 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_1770                 ev=''
+
+===== case_21 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_6440                   ev='evidence_92'
+   2 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_3737              ev='evidence_92'
+   3 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_5335                 ev='evidence_92'
+
+===== case_22 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_8911                    ev='evidence_05'
+   2 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=analytics_platform        res=analytics_4440                 ev='evidence_05'
+   3 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_8911                    ev=''
+   4 REMEDIATION  ANONYMIZE_RECORD             ANONYMIZED   sys=analytics_platform        res=analytics_4440                 ev=''
+   5 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_4990                   ev=''
+   6 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_8911                    ev=''
+   7 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_3482              ev=''
+   8 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_4440                 ev=''
+
+===== case_23 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=export_service            res=export_7364                    ev='evidence_92'
+   2 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_898                     ev='evidence_92'
+   3 REMEDIATION  DELETE_RECORD                ABSENT       sys=export_service            res=export_7364                    ev=''
+   4 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_898                     ev=''
+   5 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_410                    ev=''
+   6 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=export_service            res=export_7364                    ev=''
+   7 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_898                     ev=''
+   8 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_4128              ev=''
+
+===== case_24 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=account_service           res=account_5334                   ev='evidence_92'
+   2 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_5577                    ev='evidence_92'
+   3 REMEDIATION  DELETE_RECORD                ABSENT       sys=account_service           res=account_5334                   ev=''
+   4 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_5577                    ev=''
+   5 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_5334                   ev=''
+   6 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_5577                    ev=''
+   7 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_7095              ev=''
+
+===== case_25 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_3136                   ev='evidence_92'
+   2 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_451               ev='evidence_92'
+   3 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_1895                 ev='evidence_92'
+
+===== case_26 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_5684                   ev='evidence_92'
+   2 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_5416              ev='evidence_92'
+   3 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=support_platform          res=support_4715                   ev='evidence_92'
+   4 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_4566                 ev='evidence_92'
+   5 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_6244                 ev='evidence_92'
+   6 VERIFICATION VERIFY_RESTORE_BLOCKED       BLOCKED      sys=backup_service            res=backup_3120                    ev='evidence_92'
+
+===== case_27 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_3866                   ev='evidence_92'
+   2 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_3830              ev='evidence_92'
+   3 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=support_platform          res=support_4707                   ev='evidence_92'
+   4 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_4574                 ev='evidence_92'
+   5 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_2295                 ev='evidence_92'
+   6 VERIFICATION VERIFY_RESTORE_BLOCKED       BLOCKED      sys=backup_service            res=backup_5970                    ev='evidence_92'
+
+===== case_28 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_5482                   ev='evidence_92'
+   2 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_9265              ev='evidence_92'
+   3 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=support_platform          res=support_2351                   ev='evidence_92'
+   4 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_6077                 ev='evidence_92'
+   5 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_2337                 ev='evidence_92'
+   6 VERIFICATION VERIFY_RESTORE_BLOCKED       BLOCKED      sys=backup_service            res=backup_838                     ev='evidence_92'
+
+===== case_29 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_1993                    ev='evidence_92'
+   2 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=analytics_platform        res=analytics_5208                 ev='evidence_92'
+   3 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=support_platform          res=support_5281                   ev='evidence_92'
+   4 FINDING      REPORT_ACTIVE_DATA_FLOW      ACTIVE       sys=integration_service       res=data_flow_3827                 ev='evidence_92'
+   5 REMEDIATION  DISABLE_DATA_FLOW            DISABLED     sys=integration_service       res=data_flow_3827                 ev=''
+   6 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_1993                    ev=''
+   7 REMEDIATION  REDACT_RECORD                REDACTED     sys=support_platform          res=support_5281                   ev=''
+   8 REMEDIATION  ANONYMIZE_RECORD             ANONYMIZED   sys=analytics_platform        res=analytics_5208                 ev=''
+   9 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_7012                   ev=''
+  10 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_1993                    ev=''
+  11 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_3954              ev=''
+  12 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=support_platform          res=support_5281                   ev=''
+  13 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_5208                 ev=''
+  14 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_3827                 ev=''
+
+===== case_30 INCOMPLETE =====
+   1 FINDING      REPORT_REMAINING_RECORD      PRESENT      sys=search_service            res=search_9359                    ev='evidence_92'
+   2 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=analytics_platform        res=analytics_3697                 ev='evidence_92'
+   3 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=support_platform          res=support_6477                   ev='evidence_92'
+   4 FINDING      REPORT_ACTIVE_DATA_FLOW      ACTIVE       sys=integration_service       res=data_flow_8524                 ev='evidence_92'
+   5 REMEDIATION  DISABLE_DATA_FLOW            DISABLED     sys=integration_service       res=data_flow_8524                 ev=''
+   6 REMEDIATION  DELETE_RECORD                ABSENT       sys=search_service            res=search_9359                    ev=''
+   7 REMEDIATION  REDACT_RECORD                REDACTED     sys=support_platform          res=support_6477                   ev=''
+   8 REMEDIATION  ANONYMIZE_RECORD             ANONYMIZED   sys=analytics_platform        res=analytics_3697                 ev=''
+   9 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_4163                   ev=''
+  10 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=search_service            res=search_9359                    ev=''
+  11 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_1707              ev=''
+  12 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=support_platform          res=support_6477                   ev=''
+  13 VERIFICATION VERIFY_RECORD_ANONYMIZED     ANONYMIZED   sys=analytics_platform        res=analytics_3697                 ev=''
+  14 VERIFICATION VERIFY_DATA_FLOW_DISABLED    DISABLED     sys=integration_service       res=data_flow_8524                 ev=''
+
+===== case_31 COMPLETE =====
+   1 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_4857                   ev='evidence_51'
+   2 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_6909              ev='evidence_51'
+   3 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=identity_service          res=tombstone_440                  ev='evidence_51'
+
+===== case_32 INCOMPLETE =====
+   1 FINDING      REPORT_EXPOSED_PII           PRESENT      sys=identity_service          res=tombstone_9178                 ev='evidence_51'
+   2 REMEDIATION  REDACT_RECORD                REDACTED     sys=identity_service          res=tombstone_9178                 ev=''
+   3 VERIFICATION VERIFY_RECORD_ABSENT         ABSENT       sys=account_service           res=account_8858                   ev=''
+   4 VERIFICATION VERIFY_RECORD_PRESENT        PRESENT      sys=security_service          res=audit_record_7068              ev=''
+   5 VERIFICATION VERIFY_RECORD_REDACTED       REDACTED     sys=identity_service          res=tombstone_9178                 ev=''
+
+=== OP ORDER ANALYSIS PER PHASE ===
+violations: NONE
+
+=== FINDING->REMED->VERIFY PAIRING PATTERNS ===
+
+case_05:
+  FIND: [('REPORT_REMAINING_RECORD', 'account_service', 'account_005', 'evidence_54')]
+  REM:  [('DELETE_RECORD', 'account_service', 'account_005', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_005', '')]
+
+case_06:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_001', 'evidence_57')]
+  REM:  [('DELETE_RECORD', 'search_service', 'search_001', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_006', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_001', '')]
+
+case_07:
+  FIND: [('REPORT_REMAINING_RECORD', 'support_platform', 'support_001', 'evidence_58')]
+  REM:  [('DELETE_RECORD', 'support_platform', 'support_001', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_007', ''), ('VERIFY_RECORD_ABSENT', 'support_platform', 'support_001', '')]
+
+case_08:
+  FIND: [('REPORT_REMAINING_RECORD', 'export_service', 'export_001', 'evidence_59')]
+  REM:  [('DELETE_RECORD', 'export_service', 'export_001', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_008', ''), ('VERIFY_RECORD_ABSENT', 'export_service', 'export_001', '')]
+
+case_09:
+  FIND: [('REPORT_RESTORE_RISK', 'backup_service', 'backup_4978', 'evidence_93')]
+  REM:  [('BLOCK_RESTORE', 'backup_service', 'backup_4978', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_3960', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_4902', ''), ('VERIFY_RESTORE_BLOCKED', 'backup_service', 'backup_4978', '')]
+
+case_10:
+  FIND: [('REPORT_REMAINING_RECORD', 'support_platform', 'support_002', 'evidence_61')]
+  REM:  [('DELETE_RECORD', 'support_platform', 'support_002', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_010', ''), ('VERIFY_RECORD_ABSENT', 'support_platform', 'support_002', '')]
+
+case_11:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_052', 'evidence_03'), ('REPORT_EXPOSED_PII', 'analytics_platform', 'analytics_2034', 'evidence_03'), ('REPORT_EXPOSED_PII', 'support_platform', 'support_864', 'evidence_03'), ('REPORT_ACTIVE_DATA_FLOW', 'integration_service', 'data_flow_9522', 'evidence_03')]
+  REM:  [('DISABLE_DATA_FLOW', 'integration_service', 'data_flow_9522', ''), ('DELETE_RECORD', 'search_service', 'search_052', ''), ('REDACT_RECORD', 'support_platform', 'support_864', ''), ('ANONYMIZE_RECORD', 'analytics_platform', 'analytics_2034', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_4248', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_052', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_9394', ''), ('VERIFY_RECORD_REDACTED', 'support_platform', 'support_864', ''), ('VERIFY_RECORD_ANONYMIZED', 'analytics_platform', 'analytics_2034', ''), ('VERIFY_DATA_FLOW_DISABLED', 'integration_service', 'data_flow_9522', '')]
+
+case_12:
+  FIND: [('REPORT_REMAINING_RECORD', 'analytics_platform', 'analytics_9914', 'evidence_01')]
+  REM:  [('DELETE_RECORD', 'analytics_platform', 'analytics_9914', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_9797', ''), ('VERIFY_RECORD_ABSENT', 'analytics_platform', 'analytics_9914', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_2945', '')]
+
+case_13:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_1308', 'evidence_03'), ('REPORT_REMAINING_RECORD', 'support_platform', 'support_4218', 'evidence_03')]
+  REM:  [('DELETE_RECORD', 'search_service', 'search_1308', ''), ('DELETE_RECORD', 'support_platform', 'support_4218', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_9335', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_1308', ''), ('VERIFY_RECORD_ABSENT', 'support_platform', 'support_4218', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_4816', '')]
+
+case_14:
+  FIND: [('REPORT_RESTORE_RISK', 'backup_service', 'backup_3870', 'evidence_03')]
+  REM:  [('BLOCK_RESTORE', 'backup_service', 'backup_3870', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_3677', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_987', ''), ('VERIFY_RESTORE_BLOCKED', 'backup_service', 'backup_3870', '')]
+
+case_15:
+  FIND: [('REPORT_ACTIVE_DATA_FLOW', 'integration_service', 'data_flow_9846', 'evidence_01')]
+  REM:  [('DISABLE_DATA_FLOW', 'integration_service', 'data_flow_9846', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_4745', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_1596', ''), ('VERIFY_DATA_FLOW_DISABLED', 'integration_service', 'data_flow_9846', '')]
+
+case_16:
+  FIND: [('REPORT_REMAINING_RECORD', 'account_service', 'account_994', 'evidence_05'), ('REPORT_REMAINING_RECORD', 'search_service', 'search_1007', 'evidence_05')]
+  REM:  [('DELETE_RECORD', 'account_service', 'account_994', ''), ('DELETE_RECORD', 'search_service', 'search_1007', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_994', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_1007', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_9528', '')]
+
+case_17:
+  FIND: [('REPORT_RESTORE_RISK', 'backup_service', 'backup_3245', 'evidence_01')]
+  REM:  [('BLOCK_RESTORE', 'backup_service', 'backup_3245', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_4092', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_1797', ''), ('VERIFY_RESTORE_BLOCKED', 'backup_service', 'backup_3245', '')]
+
+case_18:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_4013', 'evidence_94'), ('REPORT_EXPOSED_PII', 'analytics_platform', 'analytics_037', 'evidence_94'), ('REPORT_EXPOSED_PII', 'support_platform', 'support_5569', 'evidence_94'), ('REPORT_ACTIVE_DATA_FLOW', 'integration_service', 'data_flow_4890', 'evidence_94')]
+  REM:  [('DISABLE_DATA_FLOW', 'integration_service', 'data_flow_4890', ''), ('DELETE_RECORD', 'search_service', 'search_4013', ''), ('REDACT_RECORD', 'support_platform', 'support_5569', ''), ('ANONYMIZE_RECORD', 'analytics_platform', 'analytics_037', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_5521', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_4013', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_6645', ''), ('VERIFY_RECORD_REDACTED', 'support_platform', 'support_5569', ''), ('VERIFY_RECORD_ANONYMIZED', 'analytics_platform', 'analytics_037', ''), ('VERIFY_DATA_FLOW_DISABLED', 'integration_service', 'data_flow_4890', '')]
+
+case_19:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_6083', 'evidence_01'), ('REPORT_EXPOSED_PII', 'support_platform', 'support_9553', 'evidence_01')]
+  REM:  [('DELETE_RECORD', 'search_service', 'search_6083', ''), ('REDACT_RECORD', 'support_platform', 'support_9553', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_9102', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_6083', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_6793', ''), ('VERIFY_RECORD_REDACTED', 'support_platform', 'support_9553', '')]
+
+case_20:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_4262', 'evidence_94'), ('REPORT_ACTIVE_DATA_FLOW', 'integration_service', 'data_flow_1770', 'evidence_94')]
+  REM:  [('DISABLE_DATA_FLOW', 'integration_service', 'data_flow_1770', ''), ('DELETE_RECORD', 'search_service', 'search_4262', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_5037', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_4262', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_5569', ''), ('VERIFY_DATA_FLOW_DISABLED', 'integration_service', 'data_flow_1770', '')]
+
+case_22:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_8911', 'evidence_05'), ('REPORT_EXPOSED_PII', 'analytics_platform', 'analytics_4440', 'evidence_05')]
+  REM:  [('DELETE_RECORD', 'search_service', 'search_8911', ''), ('ANONYMIZE_RECORD', 'analytics_platform', 'analytics_4440', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_4990', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_8911', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_3482', ''), ('VERIFY_RECORD_ANONYMIZED', 'analytics_platform', 'analytics_4440', '')]
+
+case_23:
+  FIND: [('REPORT_REMAINING_RECORD', 'export_service', 'export_7364', 'evidence_92'), ('REPORT_REMAINING_RECORD', 'search_service', 'search_898', 'evidence_92')]
+  REM:  [('DELETE_RECORD', 'export_service', 'export_7364', ''), ('DELETE_RECORD', 'search_service', 'search_898', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_410', ''), ('VERIFY_RECORD_ABSENT', 'export_service', 'export_7364', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_898', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_4128', '')]
+
+case_24:
+  FIND: [('REPORT_REMAINING_RECORD', 'account_service', 'account_5334', 'evidence_92'), ('REPORT_REMAINING_RECORD', 'search_service', 'search_5577', 'evidence_92')]
+  REM:  [('DELETE_RECORD', 'account_service', 'account_5334', ''), ('DELETE_RECORD', 'search_service', 'search_5577', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_5334', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_5577', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_7095', '')]
+
+case_29:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_1993', 'evidence_92'), ('REPORT_EXPOSED_PII', 'analytics_platform', 'analytics_5208', 'evidence_92'), ('REPORT_EXPOSED_PII', 'support_platform', 'support_5281', 'evidence_92'), ('REPORT_ACTIVE_DATA_FLOW', 'integration_service', 'data_flow_3827', 'evidence_92')]
+  REM:  [('DISABLE_DATA_FLOW', 'integration_service', 'data_flow_3827', ''), ('DELETE_RECORD', 'search_service', 'search_1993', ''), ('REDACT_RECORD', 'support_platform', 'support_5281', ''), ('ANONYMIZE_RECORD', 'analytics_platform', 'analytics_5208', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_7012', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_1993', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_3954', ''), ('VERIFY_RECORD_REDACTED', 'support_platform', 'support_5281', ''), ('VERIFY_RECORD_ANONYMIZED', 'analytics_platform', 'analytics_5208', ''), ('VERIFY_DATA_FLOW_DISABLED', 'integration_service', 'data_flow_3827', '')]
+
+case_30:
+  FIND: [('REPORT_REMAINING_RECORD', 'search_service', 'search_9359', 'evidence_92'), ('REPORT_EXPOSED_PII', 'analytics_platform', 'analytics_3697', 'evidence_92'), ('REPORT_EXPOSED_PII', 'support_platform', 'support_6477', 'evidence_92'), ('REPORT_ACTIVE_DATA_FLOW', 'integration_service', 'data_flow_8524', 'evidence_92')]
+  REM:  [('DISABLE_DATA_FLOW', 'integration_service', 'data_flow_8524', ''), ('DELETE_RECORD', 'search_service', 'search_9359', ''), ('REDACT_RECORD', 'support_platform', 'support_6477', ''), ('ANONYMIZE_RECORD', 'analytics_platform', 'analytics_3697', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_4163', ''), ('VERIFY_RECORD_ABSENT', 'search_service', 'search_9359', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_1707', ''), ('VERIFY_RECORD_REDACTED', 'support_platform', 'support_6477', ''), ('VERIFY_RECORD_ANONYMIZED', 'analytics_platform', 'analytics_3697', ''), ('VERIFY_DATA_FLOW_DISABLED', 'integration_service', 'data_flow_8524', '')]
+
+case_32:
+  FIND: [('REPORT_EXPOSED_PII', 'identity_service', 'tombstone_9178', 'evidence_51')]
+  REM:  [('REDACT_RECORD', 'identity_service', 'tombstone_9178', '')]
+  VER:  [('VERIFY_RECORD_ABSENT', 'account_service', 'account_8858', ''), ('VERIFY_RECORD_PRESENT', 'security_service', 'audit_record_7068', ''), ('VERIFY_RECORD_REDACTED', 'identity_service', 'tombstone_9178', '')]
+
+=== EVIDENCE_ID TYPES ===
+case_01 COMPLETE: {'file_id': 1}
+case_02 COMPLETE: {'file_id': 1}
+case_03 COMPLETE: {'file_id': 3}
+case_04 COMPLETE: {'file_id': 2}
+case_05 INCOMPLETE: {'file_id': 1, 'EMPTY': 2}
+case_06 INCOMPLETE: {'file_id': 1, 'EMPTY': 3}
+case_07 INCOMPLETE: {'file_id': 1, 'EMPTY': 3}
+case_08 INCOMPLETE: {'file_id': 1, 'EMPTY': 3}
+case_09 INCOMPLETE: {'file_id': 1, 'EMPTY': 4}
+case_10 INCOMPLETE: {'file_id': 1, 'EMPTY': 3}
+case_11 INCOMPLETE: {'file_id': 4, 'EMPTY': 10}
+case_12 INCOMPLETE: {'file_id': 1, 'EMPTY': 4}
+case_13 INCOMPLETE: {'file_id': 2, 'EMPTY': 6}
+case_14 INCOMPLETE: {'file_id': 1, 'EMPTY': 4}
+case_15 INCOMPLETE: {'file_id': 1, 'EMPTY': 4}
+case_16 INCOMPLETE: {'file_id': 2, 'EMPTY': 5}
+case_17 INCOMPLETE: {'file_id': 1, 'EMPTY': 4}
+case_18 INCOMPLETE: {'file_id': 4, 'EMPTY': 10}
+case_19 INCOMPLETE: {'file_id': 2, 'EMPTY': 6}
+case_20 INCOMPLETE: {'file_id': 2, 'EMPTY': 6}
+case_21 COMPLETE: {'file_id': 3}
+case_22 INCOMPLETE: {'file_id': 2, 'EMPTY': 6}
+case_23 INCOMPLETE: {'file_id': 2, 'EMPTY': 6}
+case_24 INCOMPLETE: {'file_id': 2, 'EMPTY': 5}
+case_25 COMPLETE: {'file_id': 3}
+case_26 COMPLETE: {'file_id': 6}
+case_27 COMPLETE: {'file_id': 6}
+case_28 COMPLETE: {'file_id': 6}
+case_29 INCOMPLETE: {'file_id': 4, 'EMPTY': 10}
+case_30 INCOMPLETE: {'file_id': 4, 'EMPTY': 10}
+case_31 COMPLETE: {'file_id': 3}
+case_32 INCOMPLETE: {'file_id': 1, 'EMPTY': 4}
+
+=== UNIQUE (system, resource, ops) across statuses ===
